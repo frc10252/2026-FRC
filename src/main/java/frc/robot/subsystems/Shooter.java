@@ -132,6 +132,6 @@ public class Shooter extends SubsystemBase {
         // currentRpm   = blueMotor.getVelocity().getValueAsDouble() * 60.0;
         // shooterPower = blueMotor.getDutyCycle().getValueAsDouble();
         blueMotor.set(0.85*(joystick.getRightY()));
-        greenMotor.set(0.85*(joystick.getRightY()));
+        greenMotor.set(-0.85*(joystick.getRightY()));
     }
 }
