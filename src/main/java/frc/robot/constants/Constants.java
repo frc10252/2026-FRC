@@ -6,7 +6,7 @@ import com.ctre.phoenix6.hardware.Pigeon2;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation3d;
 import java.util.List;
-import frc.robot.constants.TunerConstants;
+// import frc.robot.constants.TunerConstants; not used
 
 public class Constants {
     public static final double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed

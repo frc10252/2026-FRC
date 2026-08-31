@@ -9,7 +9,6 @@ import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.networktables.DoubleArrayPublisher;
 import edu.wpi.first.networktables.DoublePublisher;
-import edu.wpi.first.networktables.DoubleSubscriber;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.StringPublisher;
@@ -66,8 +65,7 @@ public class Telemetry {
     /* UDP telemetry */
     private final NetworkTable udpTable = inst.getTable("Udp");
     private final StringSubscriber udpLastPacket = udpTable.getStringTopic("LastPacket").subscribe("");
-    private final DoubleSubscriber udpLastPacketBytes = udpTable.getDoubleTopic("LastPacketBytes").subscribe(0.0);
-    private final DoubleSubscriber udpLastPacketTimestamp = udpTable.getDoubleTopic("LastPacketTimestamp").subscribe(0.0);
+    // private final DoubleSubscriber udpLastPacketTimestamp = udpTable.getDoubleTopic("LastPacketTimestamp").subscribe(0.0);
 
     /* Mechanisms to represent the swerve module states */
     private final Mechanism2d[] m_moduleMechanisms = new Mechanism2d[] {
@@ -145,7 +143,7 @@ public class Telemetry {
         SmartDashboard.putNumber("current shooter rpm", Shooter.currentRpm);
         SmartDashboard.putNumber("shooter power", Shooter.shooterPower);
         SmartDashboard.putString("udp last packet", udpLastPacket.get(""));
-        SmartDashboard.putNumber("udp last timestamp", udpLastPacketTimestamp.get(0.0));
+        // SmartDashboard.putNumber("udp last timestamp", udpLastPacketTimestamp.get(0.0));
         SmartDashboard.putNumber("april tags detected", AprilTags.getDetectedCount());
         SmartDashboard.putNumber("seconds since last tag", UdpTelemetryReceiver.getSecondsSinceLastTag());
         SmartDashboard.putNumber("nearest processor dist (m)", UdpTelemetryReceiver.getNearestProcessorDistMeters());

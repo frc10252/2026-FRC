@@ -74,7 +74,7 @@ public class Drive extends SubsystemBase {
     }
 
     public void periodic(){
-        double gyroAngle = Constants.imu.getYaw().getValueAsDouble();
+        // double gyroAngle = Constants.imu.getYaw().getValueAsDouble();
 
         if (aimAtTag) {
             kP = 3.0;
